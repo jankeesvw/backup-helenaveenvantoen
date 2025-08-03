@@ -1,0 +1,17 @@
+# Ignore large backup files for local development
+# The backup directory will be committed by GitHub Actions
+# but can be ignored locally if too large
+
+# Common system files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.log
