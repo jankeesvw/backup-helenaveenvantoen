@@ -5,16 +5,16 @@ Automatische dagelijkse backup van https://www.helenaveenvantoen.nl
 ## Hoe het werkt
 
 De GitHub Action draait dagelijks om 03:00 UTC en:
-1. Downloadt de volledige website met `wget`
+1. Downloadt de volledige website met **HTTrack** (veel beter voor complete website backups)
 2. Slaat deze op in de `helenaveenvantoen.nl/` map
 3. Commit alleen als er wijzigingen zijn
 
 ## Backup maken
 
-### Optie 1: Bash script (eenvoudigst)
+### Optie 1: Lokaal HTTrack script
 ```bash
-# Voer het backup script uit
-./backup.sh
+# Voer het HTTrack backup script uit
+./backup-httrack.sh
 ```
 
 ### Optie 2: Met GitHub CLI 
