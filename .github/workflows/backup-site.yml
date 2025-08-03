@@ -5,6 +5,9 @@ on:
     - cron: '0 3 * * *'  # Daily at 03:00 UTC
   workflow_dispatch:  # Allow manual trigger via gh CLI
 
+permissions:
+  contents: write
+
 jobs:
   backup:
     runs-on: ubuntu-latest
@@ -21,56 +24,12 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
     
-    - name: Remove old backup
-      run: |
-        if [ -d "helenaveenvantoen.nl" ]; then
-          echo "Removing old backup directory..."
-          rm -rf helenaveenvantoen.nl
-        fi
-    
     - name: Install HTTrack
       run: |
         sudo apt-get update
         sudo apt-get install -y httrack
 
-    - name: Download website with HTTrack
+    - name: Run backup script
       run: |
-        echo "Starting website backup with HTTrack..."
-        httrack https://www.helenaveenvantoen.nl \
-            -O helenaveenvantoen.nl \
-            -r6 \
-            -s0 \
-            -I0 \
-            -K3 \
-            -c8 \
-            -A25000 \
-            -F "Mozilla/5.0 (compatible; GitHub-Actions-HTTrack-Backup)" \
-            -*.css.map \
-            -*.js.map \
-            --disable-security-limits \
-            --robots=0
-    
-    - name: Check for changes
-      id: changes
-      run: |
-        git add helenaveenvantoen.nl
-        if git diff --staged --quiet; then
-          echo "No changes detected"
-          echo "has_changes=false" >> $GITHUB_OUTPUT
-        else
-          echo "Changes detected"
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-        fi
-    
-    - name: Commit and push changes
-      if: steps.changes.outputs.has_changes == 'true'
-      run: |
-        TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S")
-        git commit -m "HTTrack backup $TIMESTAMP"
-        git push
-        echo "Backup committed and pushed successfully"
-    
-    - name: No changes to commit
-      if: steps.changes.outputs.has_changes == 'false'
-      run: |
-        echo "No changes detected - skipping commit"
+        chmod +x backup-httrack.sh
+        ./backup-httrack.sh

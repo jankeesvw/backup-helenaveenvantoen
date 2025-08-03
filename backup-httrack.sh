@@ -34,11 +34,26 @@ httrack "$WEBSITE_URL" \
     -K3 \
     -c8 \
     -A25000 \
-    -F "Mozilla/5.0 (compatible; HTTrack-Backup)" \
+    -F "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
     -*.css.map \
     -*.js.map \
     --disable-security-limits \
-    --robots=0
+    --robots=0 \
+    --ext-depth=2 \
+    --near \
+    "+*.squarespace.com/*" \
+    "+*.squarespace-cdn.com/*" \
+    "+*.static.squarespace.com/*" \
+    "+images.squarespace-cdn.com/*" \
+    "+static1.squarespace.com/*" \
+    "+*.amazonaws.com/*" \
+    "+*.cloudfront.net/*" \
+    "+*.jpg" \
+    "+*.jpeg" \
+    "+*.png" \
+    "+*.gif" \
+    "+*.webp" \
+    "+*.svg"
 
 # Check if backup was successful
 if [ -d "$BACKUP_DIR" ]; then
