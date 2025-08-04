@@ -28,7 +28,7 @@ fi
 echo "📥 Downloading website with HTTrack..."
 httrack "$WEBSITE_URL" \
     -O "$BACKUP_DIR" \
-    -r2 \
+    -r3 \
     -s0 \
     -I0 \
     -K3 \
@@ -39,11 +39,11 @@ httrack "$WEBSITE_URL" \
     -*.js.map \
     --disable-security-limits \
     --robots=0 \
-    --max-files=2000 \
-    --max-size=50000000 \
-    "+images.squarespace-cdn.com/content/v1/5d43f94f93ac690001e770a7/*" \
-    "+static1.squarespace.com/static/sitecss/5d43f94f93ac690001e770a7/*/site.css" \
-    "-assets.squarespace.com/*" \
+    --ext-depth=1 \
+    "+images.squarespace-cdn.com/*" \
+    "+static1.squarespace.com/static/sitecss/*/site.css" \
+    "-assets.squarespace.com/universal/scripts-compressed/*" \
+    "-assets.squarespace.com/universal/styles-compressed/*" \
     "-use.typekit.net/*" \
     "-p.typekit.net/*" \
     "-*.facebook.com/*" \
