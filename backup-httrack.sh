@@ -28,7 +28,7 @@ fi
 echo "📥 Downloading website with HTTrack..."
 httrack "$WEBSITE_URL" \
     -O "$BACKUP_DIR" \
-    -r3 \
+    -r6 \
     -s0 \
     -I0 \
     -K3 \
@@ -39,17 +39,21 @@ httrack "$WEBSITE_URL" \
     -*.js.map \
     --disable-security-limits \
     --robots=0 \
-    --ext-depth=1 \
+    --ext-depth=2 \
+    --near \
     "+images.squarespace-cdn.com/*" \
-    "+static1.squarespace.com/static/sitecss/*/site.css" \
-    "-assets.squarespace.com/universal/scripts-compressed/*" \
-    "-assets.squarespace.com/universal/styles-compressed/*" \
+    "+static1.squarespace.com/*" \
+    "+*.jpg" \
+    "+*.jpeg" \
+    "+*.png" \
+    "+*.gif" \
+    "+*.webp" \
+    "-assets.squarespace.com/universal/*" \
     "-use.typekit.net/*" \
     "-p.typekit.net/*" \
     "-*.facebook.com/*" \
     "-fonts.googleapis.com/*" \
-    "-fonts.gstatic.com/*" \
-    "-definitions.sqspcdn.com/*"
+    "-fonts.gstatic.com/*"
 
 # Check if backup was successful
 if [ -d "$BACKUP_DIR" ]; then
