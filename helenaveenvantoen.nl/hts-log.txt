@@ -1,14 +1,12 @@
-HTTrack3.49-2 launched on Mon, 04 Aug 2025 14:44:50 at https://www.helenaveenvantoen.nl -*.css.map -*.js.map +images.squarespace-cdn.com/content/v1/5d43f94f93ac690001e770a7/* +static1.squarespace.com/static/sitecss/5d43f94f93ac690001e770a7/*/site.css -assets.squarespace.com/* -use.typekit.net/* -p.typekit.net/* -*.facebook.com/* -fonts.googleapis.com/* -fonts.gstatic.com/* -definitions.sqspcdn.com/*
-(httrack https://www.helenaveenvantoen.nl -O helenaveenvantoen.nl -r2 -s0 -I0 -K3 -c4 -A25000 -F "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" -*.css.map -*.js.map -%! -s0 -m2000 -M50000000 +images.squarespace-cdn.com/content/v1/5d43f94f93ac690001e770a7/* +static1.squarespace.com/static/sitecss/5d43f94f93ac690001e770a7/*/site.css -assets.squarespace.com/* -use.typekit.net/* -p.typekit.net/* -*.facebook.com/* -fonts.googleapis.com/* -fonts.gstatic.com/* -definitions.sqspcdn.com/* )
+HTTrack3.49-2 launched on Mon, 04 Aug 2025 14:46:19 at https://www.helenaveenvantoen.nl -*.css.map -*.js.map +images.squarespace-cdn.com/* +static1.squarespace.com/static/sitecss/*/site.css -assets.squarespace.com/universal/scripts-compressed/* -assets.squarespace.com/universal/styles-compressed/* -use.typekit.net/* -p.typekit.net/* -*.facebook.com/* -fonts.googleapis.com/* -fonts.gstatic.com/* -definitions.sqspcdn.com/*
+(httrack https://www.helenaveenvantoen.nl -O helenaveenvantoen.nl -r3 -s0 -I0 -K3 -c4 -A25000 -F "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" -*.css.map -*.js.map -%! -s0 -%e1 +images.squarespace-cdn.com/* +static1.squarespace.com/static/sitecss/*/site.css -assets.squarespace.com/universal/scripts-compressed/* -assets.squarespace.com/universal/styles-compressed/* -use.typekit.net/* -p.typekit.net/* -*.facebook.com/* -fonts.googleapis.com/* -fonts.gstatic.com/* -definitions.sqspcdn.com/* )
 
 Information, Warnings and Errors reported for this mirror:
 note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
 	such as username/password authentication for websites mirrored in this project
 	do not share these files/folders if you want these information to remain private
 
-14:44:50	Warning: 	* security warning: !!! BYPASSING SECURITY LIMITS - MONITOR THIS SESSION WITH EXTREME CARE !!!
-14:45:06	Warning: 	Big file cancelled according to user's preferences: https://images.squarespace-cdn.com/content/v1/5d43f94f93ac690001e770a7/1635708788027-6QVL3BJHV99TWX5PFKHU/kop+startpagina+2.jpg
-14:45:06	Error: 	"File too big" (-7) at link https://images.squarespace-cdn.com/content/v1/5d43f94f93ac690001e770a7/1635708788027-6QVL3BJHV99TWX5PFKHU/kop+startpagina+2.jpg (from https://www.helenaveenvantoen.nl/)
+14:46:19	Warning: 	* security warning: !!! BYPASSING SECURITY LIMITS - MONITOR THIS SESSION WITH EXTREME CARE !!!
 
-HTTrack Website Copier/3.49-2 mirror complete in 16 seconds : 15 links scanned, 14 files written (1446677 bytes overall) [224041 bytes received at 14002 bytes/sec], 1437477 bytes transferred using HTTP compression in 12 files, ratio 14%
-(1 errors, 2 warnings, 0 messages)
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 19 seconds : 138 links scanned, 138 files written (14375242 bytes overall) [2993814 bytes received at 21538 bytes/sec], 14227900 bytes transferred using HTTP compression in 134 files, ratio 19%, 1.0 requests per connection
+(No errors, 1 warnings, 0 messages)
