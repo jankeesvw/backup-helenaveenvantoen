@@ -28,32 +28,28 @@ fi
 echo "📥 Downloading website with HTTrack..."
 httrack "$WEBSITE_URL" \
     -O "$BACKUP_DIR" \
-    -r6 \
+    -r2 \
     -s0 \
     -I0 \
     -K3 \
-    -c8 \
+    -c4 \
     -A25000 \
     -F "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
     -*.css.map \
     -*.js.map \
     --disable-security-limits \
     --robots=0 \
-    --ext-depth=2 \
-    --near \
-    "+*.squarespace.com/*" \
-    "+*.squarespace-cdn.com/*" \
-    "+*.static.squarespace.com/*" \
-    "+images.squarespace-cdn.com/*" \
-    "+static1.squarespace.com/*" \
-    "+*.amazonaws.com/*" \
-    "+*.cloudfront.net/*" \
-    "+*.jpg" \
-    "+*.jpeg" \
-    "+*.png" \
-    "+*.gif" \
-    "+*.webp" \
-    "+*.svg"
+    --max-files=2000 \
+    --max-size=50000000 \
+    "+images.squarespace-cdn.com/content/v1/5d43f94f93ac690001e770a7/*" \
+    "+static1.squarespace.com/static/sitecss/5d43f94f93ac690001e770a7/*/site.css" \
+    "-assets.squarespace.com/*" \
+    "-use.typekit.net/*" \
+    "-p.typekit.net/*" \
+    "-*.facebook.com/*" \
+    "-fonts.googleapis.com/*" \
+    "-fonts.gstatic.com/*" \
+    "-definitions.sqspcdn.com/*"
 
 # Check if backup was successful
 if [ -d "$BACKUP_DIR" ]; then
